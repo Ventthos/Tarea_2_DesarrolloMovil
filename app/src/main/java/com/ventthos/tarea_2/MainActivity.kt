@@ -47,6 +47,8 @@ class MainActivity : AppCompatActivity() {
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         pizzaSpinner.adapter = spinnerAdapter
 
+
+
         pizzasDisplay = findViewById(R.id.pizzasDisplay)
         shippingRequired = findViewById(R.id.switchShipping)
 

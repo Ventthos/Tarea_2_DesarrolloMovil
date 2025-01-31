@@ -1,6 +1,6 @@
 <resources>
-    <color name="primaryColor">#D32F2F</color> Rojo
-    <color name="backgroundColor">#FFE0B2</color> Beige
+    <color name="primaryColor">#d22406</color>
+    <color name="backgroundColor">#f7f5f7</color>
     <color name="textColor">#000000</color>
-    <color name="buttonTextColor">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
 </resources>
