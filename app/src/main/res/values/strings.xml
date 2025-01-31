@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">Tarea_2</string>
+    <string name="app_name">Personaliza tu Pizza</string>
+    <string name="title_text">Personaliza tu Pizza 🍕</string>
+    <string name="section_extras">Extras</string>
+
+    <string name="extra_cheese">Extra Queso</string>
+    <string name="mushrooms">Champiñones</string>
+    <string name="bacon">Tocino</string>
+
+    <string name="show_extras">Mostrar Extras</string>
+    <string name="hide_extras">Ocultar Extras</string>}
+
+    <string name="extras">Extras: </string>
+
+    <string name="selected_pizza_placeholder">Selecciona los extras</string>
 </resources>
+
