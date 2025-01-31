@@ -13,5 +13,15 @@
     <string name="extras">Extras: </string>
 
     <string name="selected_pizza_placeholder">Selecciona los extras</string>
+
+    <string name="order_shipping">¿Entrega a domicilio?</string>
+
+    <string name="selectPizza">Elige tu pizza</string>
+    <string-array name="pizzaOptions">
+        <item>Pizza de pepperoni</item>
+        <item>Pizza hawaiana</item>
+        <item>Pizza de queso</item>
+        <item>Pizza vegetariana</item>
+    </string-array>
 </resources>
 

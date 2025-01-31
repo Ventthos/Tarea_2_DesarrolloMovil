@@ -1,25 +1,56 @@
 package com.ventthos.tarea_2
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import android.widget.*
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var pizzaSpinner: Spinner
+    lateinit var checkExtraCheese:CheckBox
+    lateinit var checkMushrooms: CheckBox
+    lateinit var checkBacon: CheckBox
+    lateinit var toggleExtras: ToggleButton
+    lateinit var extrasContainer: LinearLayout
+    lateinit var textSelected: TextView
+    lateinit var pizzasDisplay: ImageView
+    lateinit var shippingRequired: Switch
+    lateinit var shippingImageView: ImageView
+
+    val pizzaDefault = R.drawable.pizzadefault
+    val pizzaImages = listOf(
+        R.drawable.pizza_de_peperoni,
+        R.drawable.pizza_hawaiana,
+        R.drawable.pizza_de_queso,
+        R.drawable.pizza_vegetariana
+    )
+    val shipImage = R.drawable.shipping
+    val onRestaurantImage = R.drawable.mesa
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val checkExtraCheese = findViewById<CheckBox>(R.id.checkExtraCheese)
-        val checkMushrooms = findViewById<CheckBox>(R.id.checkMushrooms)
-        val checkBacon = findViewById<CheckBox>(R.id.checkBacon)
-        val toggleExtras = findViewById<ToggleButton>(R.id.toggleExtras)
-        val extrasContainer = findViewById<LinearLayout>(R.id.extrasContainer)
-        val textSelected = findViewById<TextView>(R.id.textSelected)
+        checkExtraCheese = findViewById(R.id.checkExtraCheese)
+        checkMushrooms  = findViewById(R.id.checkMushrooms)
+        checkBacon = findViewById(R.id.checkBacon)
+        toggleExtras = findViewById(R.id.toggleExtras)
+        extrasContainer  = findViewById(R.id.extrasContainer)
+        textSelected = findViewById(R.id.textSelected)
+
+        pizzaSpinner = findViewById(R.id.pizzaSpinner)
+        val spinnerAdapter = ArrayAdapter.createFromResource(this,R.array.pizzaOptions, android.R.layout.simple_spinner_item)
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        pizzaSpinner.adapter = spinnerAdapter
+
+        pizzasDisplay = findViewById(R.id.pizzasDisplay)
+        shippingRequired = findViewById(R.id.switchShipping)
+
+        shippingImageView = findViewById(R.id.shippingImage)
 
         extrasContainer.visibility = View.GONE
 
@@ -31,25 +62,48 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        fun actualizarSeleccion() {
-            var extras = ""
-            if (checkExtraCheese.isChecked) {
-                extras += getString(R.string.extra_cheese) + ", "
-            }
-            if (checkMushrooms.isChecked) {
-                extras += getString(R.string.mushrooms) + ", "
-            }
-            if (checkBacon.isChecked) {
-                extras += getString(R.string.bacon) + ", "
-            }
-            if (extras.isNotEmpty()) {
-                extras = extras.dropLast(2)
-            }
-            textSelected.text = getString(R.string.extras) + "$extras"
-        }
+
 
         checkExtraCheese.setOnCheckedChangeListener { _, _ -> actualizarSeleccion() }
         checkMushrooms.setOnCheckedChangeListener { _, _ -> actualizarSeleccion() }
         checkBacon.setOnCheckedChangeListener { _, _ -> actualizarSeleccion() }
+
+        pizzaSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                pizzasDisplay.setImageResource(pizzaDefault )
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                pizzasDisplay.setImageResource(pizzaImages[position])
+            }
+        }
+
+        shippingRequired.setOnCheckedChangeListener{ _, isChecked->
+            if(isChecked){
+                shippingImageView.setImageResource(shipImage)
+            }
+            else{
+                shippingImageView.setImageResource(onRestaurantImage)
+            }
+        }
+
     }
+
+    fun actualizarSeleccion() {
+        var extras = ""
+        if (checkExtraCheese.isChecked) {
+            extras += getString(R.string.extra_cheese) + ", "
+        }
+        if (checkMushrooms.isChecked) {
+            extras += getString(R.string.mushrooms) + ", "
+        }
+        if (checkBacon.isChecked) {
+            extras += getString(R.string.bacon) + ", "
+        }
+        if (extras.isNotEmpty()) {
+            extras = extras.dropLast(2)
+        }
+        textSelected.text = getString(R.string.extras) + "$extras"
+    }
+
 }
