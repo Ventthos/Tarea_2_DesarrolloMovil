@@ -1,161 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
-    tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
-    >
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:paddingTop="30dp"
-        android:paddingBottom="10dp"
-        android:background="@color/primaryColor">
-
-        <TextView
-            android:id="@+id/titleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title_text"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginTop="6dp">
-
-        <ImageView
-            android:id="@+id/pizzasDisplay"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/pizzadefault"
-            android:scaleType="centerCrop"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/selectPizza"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:layout_marginTop="4dp"
-            android:textColor="@color/textColor"/>
-
-        <Spinner
-            android:id="@+id/pizzaSpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:textColor="@color/textColor"
-            android:backgroundTint="@color/primaryColor"/>
-
-    </LinearLayout>
-
-    <ToggleButton
-        android:id="@+id/toggleExtras"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textOn="@string/hide_extras"
-        android:textOff="@string/show_extras"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/primaryColor"
-        android:textColor="@color/white"/>
-
-    <LinearLayout
-        android:id="@+id/extrasContainer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        >
-
-        <TextView
-            android:id="@+id/sectionExtras"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/section_extras"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/textColor"/>
-
-        <CheckBox
-            android:id="@+id/checkExtraCheese"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/extra_cheese"
-            android:textColor="@color/textColor"/>
-
-        <CheckBox
-            android:id="@+id/checkMushrooms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mushrooms"
-            android:textColor="@color/textColor"/>
-
-        <CheckBox
-            android:id="@+id/checkBacon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/bacon"
-            android:textColor="@color/textColor"/>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textSelected"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/selected_pizza_placeholder"
-        android:textSize="18sp"
-        android:textColor="@color/textColor"
-        android:layout_marginTop="20dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-
+        tools:context=".MainActivity">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp">
+            android:background="@color/primaryColor"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:paddingBottom="10dp">
 
             <TextView
+                android:id="@+id/titleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/order_shipping"
-                android:textSize="20sp"/>
-
-            <Switch
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/switchShipping"
-
-                />
+                android:text="@string/title_text"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/mesa"
-            android:id="@+id/shippingImage"
-            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/pizzasDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pizzadefault" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/selectPizza"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="20sp" />
+
+            <Spinner
+                android:id="@+id/pizzaSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/primaryColor"
+                android:textColor="@color/textColor" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masa Normal"></RadioButton>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masa Premium"></RadioButton>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masa Especial"></RadioButton>
+            </RadioGroup>
+            <ImageView
+                android:id="@+id/masasDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:src="@drawable/pizzadefault"
+                android:scaleType="centerCrop">
+            </ImageView>
+
+        </LinearLayout>
+
+        <ToggleButton
+            android:id="@+id/toggleExtras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/primaryColor"
+            android:textColor="@color/white"
+            android:textOff="@string/show_extras"
+            android:textOn="@string/hide_extras" />
+
+        <LinearLayout
+            android:id="@+id/extrasContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/sectionExtras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/section_extras"
+                android:textColor="@color/textColor"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkExtraCheese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/extra_cheese"
+                android:textColor="@color/textColor" />
+
+            <CheckBox
+                android:id="@+id/checkMushrooms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mushrooms"
+                android:textColor="@color/textColor" />
+
+            <CheckBox
+                android:id="@+id/checkBacon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bacon"
+                android:textColor="@color/textColor" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/selected_pizza_placeholder"
+            android:textColor="@color/textColor"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/order_shipping"
+                    android:textSize="20sp" />
+
+                <Switch
+                    android:id="@+id/switchShipping"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/shippingImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/mesa" />
+        </LinearLayout>
+
+
     </LinearLayout>
-
-
-</LinearLayout>
+</ScrollView>
