@@ -92,9 +92,9 @@
             <ImageView
                 android:id="@+id/masasDisplay"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="100dp"
                 android:layout_weight="3"
-                android:src="@drawable/pizzadefault"
+                android:src="@drawable/masatradicional"
                 android:scaleType="centerCrop">
             </ImageView>
 
