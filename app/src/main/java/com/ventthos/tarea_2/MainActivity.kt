@@ -19,6 +19,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var pizzasDisplay: ImageView
     lateinit var shippingRequired: Switch
     lateinit var shippingImageView: ImageView
+    lateinit var masaDisplay : ImageView
+    lateinit var masatradicionalButton: Button
+    lateinit var masaespecialButton: Button
+    lateinit var masapremiumButton: Button
 
     val pizzaDefault = R.drawable.pizzadefault
     val pizzaImages = listOf(
@@ -41,7 +45,10 @@ class MainActivity : AppCompatActivity() {
         toggleExtras = findViewById(R.id.toggleExtras)
         extrasContainer  = findViewById(R.id.extrasContainer)
         textSelected = findViewById(R.id.textSelected)
-
+        masaDisplay = findViewById(R.id.masasDisplay)
+        masatradicionalButton = findViewById(R.id.masaNormalButton)
+        masapremiumButton = findViewById(R.id.masaPremiumButton)
+        masaespecialButton = findViewById(R.id.masaEspecialButton)
         pizzaSpinner = findViewById(R.id.pizzaSpinner)
         val spinnerAdapter = ArrayAdapter.createFromResource(this,R.array.pizzaOptions, android.R.layout.simple_spinner_item)
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -88,7 +95,13 @@ class MainActivity : AppCompatActivity() {
                 shippingImageView.setImageResource(onRestaurantImage)
             }
         }
-
+        findViewById<RadioGroup>(R.id.radioGroup).setOnCheckedChangeListener { _, checkedId ->
+            val radioButton = findViewById<RadioButton>(checkedId)
+            val selectedOption = radioButton.text.toString()
+            if (selectedOption == "Masa Normal") masaDisplay.setImageResource(R.drawable.masatradicional)
+            if (selectedOption == "Masa Premium") masaDisplay.setImageResource(R.drawable.masapremium)
+            if (selectedOption == "Masa Especial") masaDisplay.setImageResource(R.drawable.masaespecial)
+        }
     }
 
     fun actualizarSeleccion() {

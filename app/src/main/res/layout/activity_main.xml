@@ -70,21 +70,25 @@
             android:layout_height="wrap_content">
 
             <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
 
                 <RadioButton
+                    android:id="@+id/masaNormalButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Masa Normal"></RadioButton>
 
                 <RadioButton
+                    android:id="@+id/masaPremiumButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Masa Premium"></RadioButton>
 
                 <RadioButton
+                    android:id="@+id/masaEspecialButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Masa Especial"></RadioButton>
