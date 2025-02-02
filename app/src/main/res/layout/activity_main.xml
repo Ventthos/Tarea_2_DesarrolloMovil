@@ -67,31 +67,35 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp">
 
             <RadioGroup
                 android:id="@+id/radioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp">
 
                 <RadioButton
                     android:id="@+id/masaNormalButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/masatradicional"></RadioButton>
+                    android:text="@string/masatradicional"/>
 
                 <RadioButton
                     android:id="@+id/masaPremiumButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/masapremium"></RadioButton>
+                    android:text="@string/masapremium"/>
 
                 <RadioButton
                     android:id="@+id/masaEspecialButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/masaespecial"></RadioButton>
+                    android:text="@string/masaespecial"/>
             </RadioGroup>
 
             <ImageView
@@ -100,7 +104,7 @@
                 android:layout_height="200dp"
                 android:layout_weight="3"
                 android:scaleType="centerCrop"
-                android:src="@drawable/masatradicional"></ImageView>
+                android:src="@drawable/masatradicional"/>
 
         </LinearLayout>
 
@@ -164,7 +168,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_marginTop="8dp">
 
 
             <LinearLayout
@@ -195,7 +200,8 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
 
             <ImageButton
                 android:id="@+id/image_button"
@@ -214,7 +220,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/order_confirmation"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
 
     </LinearLayout>

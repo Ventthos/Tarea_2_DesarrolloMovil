@@ -60,8 +60,6 @@ class MainActivity : AppCompatActivity() {
         pizzaSpinner.adapter = spinnerAdapter
         val imageButton = findViewById<ImageButton>(R.id.image_button)
 
-
-
         pizzasDisplay = findViewById(R.id.pizzasDisplay)
         shippingRequired = findViewById(R.id.switchShipping)
 
@@ -75,10 +73,6 @@ class MainActivity : AppCompatActivity() {
             } else {
                 extrasContainer.visibility = View.GONE
             }
-        }
-
-        imageButton.setOnClickListener {
-            showLoadingDialog()
         }
 
         checkExtraCheese.setOnCheckedChangeListener { _, _ -> actualizarSeleccion() }
@@ -107,8 +101,12 @@ class MainActivity : AppCompatActivity() {
             val radioButton = findViewById<RadioButton>(checkedId)
             val selectedOption = radioButton.text.toString()
             if (selectedOption == getString(R.string.masatradicional)) masaDisplay.setImageResource(R.drawable.masatradicional)
-            if (selectedOption == getString(R.string.masapremium)) masaDisplay.setImageResource(R.drawable.masapremium)
-            if (selectedOption == getString(R.string.masaespecial)) masaDisplay.setImageResource(R.drawable.masaespecial)
+            else if (selectedOption == getString(R.string.masapremium)) masaDisplay.setImageResource(R.drawable.masapremium)
+            else if (selectedOption == getString(R.string.masaespecial)) masaDisplay.setImageResource(R.drawable.masaespecial)
+        }
+
+        imageButton.setOnClickListener {
+            showLoadingDialog()
         }
     }
 
