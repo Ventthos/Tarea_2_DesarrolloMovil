@@ -1,10 +1,15 @@
 package com.ventthos.tarea_2
 
+import android.app.Dialog
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 
 
 class MainActivity : AppCompatActivity() {
@@ -53,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         val spinnerAdapter = ArrayAdapter.createFromResource(this,R.array.pizzaOptions, android.R.layout.simple_spinner_item)
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         pizzaSpinner.adapter = spinnerAdapter
+        val imageButton = findViewById<ImageButton>(R.id.image_button)
 
 
 
@@ -71,7 +77,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
+        imageButton.setOnClickListener {
+            showLoadingDialog()
+        }
 
         checkExtraCheese.setOnCheckedChangeListener { _, _ -> actualizarSeleccion() }
         checkMushrooms.setOnCheckedChangeListener { _, _ -> actualizarSeleccion() }
@@ -119,6 +127,29 @@ class MainActivity : AppCompatActivity() {
             extras = extras.dropLast(2)
         }
         textSelected.text = getString(R.string.extras) + "$extras"
+    }
+
+    fun showLoadingDialog() {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.loading_dialogue)
+        dialog.setCancelable(false) // Evita que se cierre accidentalmente
+
+        // Cargar el GIF en el ImageView
+        val loadingGif = dialog.findViewById<ImageView>(R.id.loadingGif)
+        Glide.with(this).asGif().load(R.drawable.order_pizza_app_loader).into(loadingGif)
+
+        dialog.show()
+
+        // Simular la acción de que el proceso se haya completado (por ejemplo, después de 3 segundos)
+        dialog.setOnDismissListener {
+            // Cuando el diálogo se cierre, mostrar el Snackbar
+            Snackbar.make(findViewById(android.R.id.content), "Orden realizada exitosamente!", Snackbar.LENGTH_LONG).show()
+        }
+
+        // Cerrar el diálogo después de 3 segundos (simulando una carga)
+        Handler(Looper.getMainLooper()).postDelayed({
+            dialog.dismiss()
+        }, 3000)
     }
 
 }

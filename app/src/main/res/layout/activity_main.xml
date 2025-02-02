@@ -93,14 +93,14 @@
                     android:layout_height="wrap_content"
                     android:text="Masa Especial"></RadioButton>
             </RadioGroup>
+
             <ImageView
                 android:id="@+id/masasDisplay"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_weight="3"
-                android:src="@drawable/masatradicional"
-                android:scaleType="centerCrop">
-            </ImageView>
+                android:scaleType="centerCrop"
+                android:src="@drawable/masatradicional"></ImageView>
 
         </LinearLayout>
 
@@ -181,9 +181,7 @@
                 <Switch
                     android:id="@+id/switchShipping"
                     android:layout_width="50dp"
-                    android:layout_height="50dp"
-
-                    />
+                    android:layout_height="50dp" />
 
             </LinearLayout>
 
@@ -192,7 +190,31 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/mesa" />
+
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/image_button"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                android:contentDescription="Botón de imagen"
+                android:scaleType="fitXY"
+                android:src="@drawable/order" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/order_confirmation"
+            android:textSize="20dp" />
 
 
     </LinearLayout>
