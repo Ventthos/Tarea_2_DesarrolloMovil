@@ -79,19 +79,19 @@
                     android:id="@+id/masaNormalButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Masa Normal"></RadioButton>
+                    android:text="@string/masatradicional"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/masaPremiumButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Masa Premium"></RadioButton>
+                    android:text="@string/masapremium"></RadioButton>
 
                 <RadioButton
                     android:id="@+id/masaEspecialButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Masa Especial"></RadioButton>
+                    android:text="@string/masaespecial"></RadioButton>
             </RadioGroup>
             <ImageView
                 android:id="@+id/masasDisplay"

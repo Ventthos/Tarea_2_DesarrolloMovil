@@ -98,9 +98,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<RadioGroup>(R.id.radioGroup).setOnCheckedChangeListener { _, checkedId ->
             val radioButton = findViewById<RadioButton>(checkedId)
             val selectedOption = radioButton.text.toString()
-            if (selectedOption == "Masa Normal") masaDisplay.setImageResource(R.drawable.masatradicional)
-            if (selectedOption == "Masa Premium") masaDisplay.setImageResource(R.drawable.masapremium)
-            if (selectedOption == "Masa Especial") masaDisplay.setImageResource(R.drawable.masaespecial)
+            if (selectedOption == getString(R.string.masatradicional)) masaDisplay.setImageResource(R.drawable.masatradicional)
+            if (selectedOption == getString(R.string.masapremium)) masaDisplay.setImageResource(R.drawable.masapremium)
+            if (selectedOption == getString(R.string.masaespecial)) masaDisplay.setImageResource(R.drawable.masaespecial)
         }
     }
 

@@ -23,5 +23,8 @@
         <item>Pizza de queso</item>
         <item>Pizza vegetariana</item>
     </string-array>
+    <string name="masatradicional">Masa tradicional</string>
+    <string name="masapremium">Masa premium</string>
+    <string name="masaespecial">Masa especial</string>
 </resources>
 
