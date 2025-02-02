@@ -27,5 +27,8 @@
     <string name="masatradicional">Masa tradicional</string>
     <string name="masapremium">Masa premium</string>
     <string name="masaespecial">Masa especial</string>
+
+    <string name="endScroll">Estás en el final </string>
+    <string name="startScroll">Estás en el principio </string>
 </resources>
 

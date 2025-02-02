@@ -4,7 +4,6 @@ import android.app.Dialog
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -28,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var masatradicionalButton: Button
     lateinit var masaespecialButton: Button
     lateinit var masapremiumButton: Button
+    lateinit var scroll: ScrollView
 
     val pizzaDefault = R.drawable.pizzadefault
     val pizzaImages = listOf(
@@ -64,6 +64,8 @@ class MainActivity : AppCompatActivity() {
         shippingRequired = findViewById(R.id.switchShipping)
 
         shippingImageView = findViewById(R.id.shippingImage)
+
+        scroll = findViewById(R.id.scroll)
 
         extrasContainer.visibility = View.GONE
 
@@ -108,6 +110,20 @@ class MainActivity : AppCompatActivity() {
         imageButton.setOnClickListener {
             showLoadingDialog()
         }
+
+        scroll.getViewTreeObserver().addOnScrollChangedListener {
+            val positionY = scroll.scrollY
+            val visibleHeight = scroll.height
+            val contentHeight = findViewById<LinearLayout>(R.id.mainLayer).height
+
+            if (positionY == 0) {
+                Snackbar.make(findViewById(android.R.id.content), getString(R.string.startScroll), Snackbar.LENGTH_SHORT).show()
+            }
+            else if(positionY+visibleHeight >= contentHeight){
+                Snackbar.make(findViewById(android.R.id.content), getString(R.string.endScroll), Snackbar.LENGTH_SHORT).show()
+            }
+
+        }
     }
 
     fun actualizarSeleccion() {
@@ -149,5 +165,7 @@ class MainActivity : AppCompatActivity() {
             dialog.dismiss()
         }, 3000)
     }
+
+
 
 }
