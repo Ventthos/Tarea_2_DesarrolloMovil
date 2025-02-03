@@ -157,7 +157,7 @@ class MainActivity : AppCompatActivity() {
         // Simular la acción de que el proceso se haya completado (por ejemplo, después de 3 segundos)
         dialog.setOnDismissListener {
             // Cuando el diálogo se cierre, mostrar el Snackbar
-            Snackbar.make(findViewById(android.R.id.content), "Orden realizada exitosamente!", Snackbar.LENGTH_LONG).show()
+            Snackbar.make(findViewById(android.R.id.content), getString(R.string.finishOrder), Snackbar.LENGTH_LONG).show()
         }
 
         // Cerrar el diálogo después de 3 segundos (simulando una carga)

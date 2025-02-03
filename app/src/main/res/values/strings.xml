@@ -30,5 +30,6 @@
 
     <string name="endScroll">Estás en el final </string>
     <string name="startScroll">Estás en el principio </string>
+    <string name="finishOrder">Orden realizada exitosamente!</string>
 </resources>
 
